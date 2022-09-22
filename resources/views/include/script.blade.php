@@ -10,14 +10,19 @@
         var path = window.location.href;
         $('.nav-link').each(function() {
             var href = $(this).attr('href');
-
             if (path === decodeURIComponent(href)) {
                 $(this).addClass('active');
                 var parent = $(this).closest('.collapse');
                 parent.addClass('d-block');
                 $(parent).find('.nav-link').first().addClass('active');
-                console.log(parent);
             }
         });
+    });
+
+    var myModal = document.getElementById('myModal');
+    var myInput = document.getElementById('myInput');
+
+    myModal.addEventListener('shown.bs.modal', function() {
+        myInput.focus()
     });
 </script>

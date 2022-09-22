@@ -1,4 +1,5 @@
 @extends('admin/layout/master-dashboard')
+@section('title','Chart')
 @section('main')
 <h1>Dashboard</h1>
 <ol class="breadcrumb mb-4">

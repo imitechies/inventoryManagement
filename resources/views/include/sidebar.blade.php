@@ -18,7 +18,6 @@
                 </a>
                 <div class="collapse" id="Category" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{url('admin/add-category')}}">Add Category</a>
                         <a class="nav-link" href="{{url('admin/manage-category')}}">Manage Category</a>
                     </nav>
                 </div>

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\manageCategory;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,12 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/',function()
 {
-    return view('admin/layout/master-dashboard');
+    return view('welcome');
 });
 Route::group(['prefix'=>'admin/'],function()
 {
-    Route::view('/','admin/layout/master-dashboard');
-    Route::view('/chart','admin/layout/chart');
-    Route::view('/add-category','admin.pages.catogery.add-catogery');
-    Route::view('/manage-category','admin.pages.catogery.manage-catogery');
+    Route::get('/',[manageCategory::class,'home']);
+    Route::view('/chart','admin/layout/chart'); 
+    Route::get('/manage-category',[manageCategory::class,'ManageCatrgory']);
 });
