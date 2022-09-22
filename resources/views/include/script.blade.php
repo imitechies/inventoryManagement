@@ -5,3 +5,19 @@
 <script src="{{asset('admin_assets/assets/demo/chart-bar-demo.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
 <script src="{{asset('admin_assets/js/datatables-simple-demo.js')}}"></script>
+<script>
+    $(() => {
+        var path = window.location.href;
+        $('.nav-link').each(function() {
+            var href = $(this).attr('href');
+
+            if (path === decodeURIComponent(href)) {
+                $(this).addClass('active');
+                var parent = $(this).closest('.collapse');
+                parent.addClass('d-block');
+                $(parent).find('.nav-link').first().addClass('active');
+                console.log(parent);
+            }
+        });
+    });
+</script>

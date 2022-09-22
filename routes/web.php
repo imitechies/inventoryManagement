@@ -20,4 +20,5 @@ Route::group(['prefix'=>'admin/'],function()
 {
     Route::view('/','admin/layout/master-dashboard');
     Route::view('/chart','admin/layout/chart');
+    Route::view('/page','admin/layout/page');
 });
