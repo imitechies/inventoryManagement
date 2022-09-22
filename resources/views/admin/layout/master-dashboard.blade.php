@@ -16,7 +16,7 @@
                 @include('include/sidebar')
             </div>
             <div id="layoutSidenav_content">
-                <section class="main">
+                <section class="main mt-5">
                     <div class="container-fluid px-4">
                        @section('main')
                        @show
