@@ -4,18 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class manageCategory extends Controller
+class ManageCategory extends Controller
 {
     public function home()
     {
-        // return view('admin.catogery.manage-catogery');
-        return view('admin/layout/master-dashboard');
+        return view('admin/catogery/manage-catogery-list');
     }
-
-    public function ManageCatrgory()
-    {
-        // return view('admin.catogery.manage-catogery');
-        return view('admin/catogery/manage-catogery');
-    }
-
 }

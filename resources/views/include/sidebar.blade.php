@@ -3,24 +3,17 @@
         <div class="nav">
             <!-- frist collapse -->
             <section>
-                <a class="nav-link" href="{{url('admin/chart')}}">
+                <a class="nav-link" href="{{route('dashboard')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
             </section>
             <!-- Second collapse -->
             <section>
-                <!-- <div class="sb-sidenav-menu-heading">Interface</div> -->
-                <a class="nav-link collapsed" href="#!" data-bs-toggle="collapse" data-bs-target="#Category" aria-expanded="false" aria-controls="collapseLayouts">
+                <a class="nav-link" href="{{route('manage-category-list')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-store"></i></div>
                     Category
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="Category" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{url('admin/manage-category')}}">Manage Category</a>
-                    </nav>
-                </div>
             </section>
             <!-- Third collapse -->
             <section>
@@ -59,7 +52,6 @@
                 </a>
                 <div class="collapse" id="Product" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#!">Add Product</a>
                         <a class="nav-link" href="#!">Manage Product</a>
                     </nav>
                 </div>

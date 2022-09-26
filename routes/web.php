@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\manageCategory;
+use App\Http\Controllers\ProductManageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +19,6 @@ Route::get('/',function()
 });
 Route::group(['prefix'=>'admin/'],function()
 {
-    Route::get('/',[manageCategory::class,'home']);
-    Route::view('/chart','admin/layout/chart'); 
-    Route::get('/manage-category',[manageCategory::class,'ManageCatrgory']);
+    Route::view('/','admin.layout.chart')->name('dashboard');
+    Route::get('/manage-category-list',[manageCategory::class,'home'])->name('manage-category-list');
 });

@@ -28,12 +28,12 @@
                 </thead>
                 <tbody id="add_tr">
                     <tr>
-                        <td>1</td>
-                        <td> <input type="text" name="ProductName[]" placeholder="Enter Product Name"> </td>
-                        <td> <input type="number" name="ProductQuantity[]" placeholder="Enter Product Quantity"> </td>
-                        <td> <input type="number" name="ProductPrice[]" placeholder="Enter Product Price"> </td>
-                        <td><button type="button" id="" onclick="AddMore()" class="btn btn-primary">
-                                <i class="fas fa-plus me-1"></i></button>
+                        <td id="serialnumber">1</td>
+                        <td> <input type="text" name="ProductName[]" class="form-control" placeholder="Enter Product Name"> </td>
+                        <td> <input type="number" name="ProductQuantity[]" class="form-control" placeholder="Enter Product Quantity"> </td>
+                        <td> <input type="number" name="ProductPrice[]" class="form-control" placeholder="Enter Product Price"> </td>
+                        <td>
+                           <button type="button" class="btn btn-primary"><i class="fas fa-plus" onclick="AddMore()"></i></button>
                         </td>
                     </tr>
                 </tbody>
@@ -63,16 +63,26 @@
     </div>
 </div>
 <script>
-    function AddMore() {
-        let count = $('#count').val();
-        count++;
-        $('#add_tr').append('<tr class="mybox" id="boxcount_' + count + '"><td>1</td><td> <input type="text" name="ProductName[]" placeholder="Enter Product Name"> </td><td> <input type="number" name="ProductQuantity[]" placeholder="Enter Product Quantity"> </td><td> <input type="number" name="ProductPrice[]" placeholder="Enter Product Price"> </td><td><button type="button" name="submit" id="submit" onclick=AddMore_remove("' + count + '") class="btn btn-danger"><i class="fas fa-xmark me-1"></i></button></td</tr>');
-    }
 
-    function AddMore_remove(del_tr) {
-        $("#boxcount_" + del_tr).remove();
-        let count = $('#count').val();
-        count--;
-    }
+// Add More Columns 
+
+let limit = 5;
+for (let i = 2; i <= limit; i++) {
+    $('#add_tr').append('<tr class="mybox" id="boxcount_' + i + '"><td>1</td><td> <input type="text" name="ProductName[]" class="form-control" placeholder="Enter Product Name"> </td><td> <input type="number" name="ProductQuantity[]" class="form-control" placeholder="Enter Product Quantity"> </td><td> <input type="number" name="ProductPrice[]" class="form-control" placeholder="Enter Product Price"> </td><td><button type="button" name="submit" id="submit" onclick=AddMore_remove("' + i + '") class="btn btn-danger"><i class="fas fa-xmark me-1"></i></button></td</tr>');
+};
+
+function AddMore() {
+    let count = ++limit;
+    $('#add_tr').append('<tr class="mybox" id="boxcount_' + count + '"><td>1</td><td> <input type="text" name="ProductName[]" class="form-control" placeholder="Enter Product Name"> </td><td> <input type="number" name="ProductQuantity[]" class="form-control" placeholder="Enter Product Quantity"> </td><td> <input type="number" name="ProductPrice[]" class="form-control" placeholder="Enter Product Price"> </td><td><button type="button" name="submit" id="submit" onclick=AddMore_remove("' + count + '") class="btn btn-danger"><i class="fas fa-xmark me-1"></i></button></td</tr>');
+}
+
+function AddMore_remove(del_tr) {
+    $("#boxcount_" + del_tr).remove();
+    let count = $('#count').val();
+    count--;
+}
+
+// Add More End Columns 
+
 </script>
 @endsection
